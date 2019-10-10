@@ -1,0 +1,27 @@
+# General
+pillow==6.2.0
+
+# Django
+Django==2.2.6
+
+# Debug
+django-debug-toolbar==1.11
+
+# Secure Sensitive Constant
+python-decouple==3.1
+
+django-extensions==2.2.3
+
+# PostgreSQL Library
+psycopg2==2.7.7
+psycopg2-binary==2.7.7
+
+# Production Server Library
+gunicorn==19.9.0
+whitenoise==4.1.2
+dj-database-url==0.5.0
+
+# Django Rest Framework
+djangorestframework==3.10.3
+
+django-webpack-loader==0.6.0
