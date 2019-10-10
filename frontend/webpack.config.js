@@ -1,6 +1,6 @@
-var path = require('path')
-var webpack = require('webpack')
-var BundleTracker = require('webpack-bundle-tracker')
+var path = require('path');
+var webpack = require('webpack');
+var BundleTracker = require('webpack-bundle-tracker');
 
 module.exports = {
   entry: './src/main.js',
@@ -9,7 +9,7 @@ module.exports = {
     filename: 'build.js'
   },
   plugins: [
-    BundleTracker({
+    new BundleTracker({
       filename: './webpack-stats.json'
     })
   ],
