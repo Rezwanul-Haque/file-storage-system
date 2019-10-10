@@ -10,6 +10,7 @@ SECRET_KEY = config('SECRET_KEY')
 # Define all applications
 THIRD_PARTY_APPS = [
     'django_extensions',
+    'webpack_loader',
 ]
 
 CUSTOM_MANAGEMENT_APPS = [
@@ -48,7 +49,7 @@ ROOT_URLCONF = 'file_storage_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -85,10 +86,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  ## STATICFILES_DIRS is the list of folders where Django will search for additional static files aside from the static folder of each app installed.
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  ## STATICFILES_DIRS is the list of folders where Django will search for additional static files aside from the static folder of each app installed.
 VENV_PATH = os.path.dirname(BASE_DIR)  ## some hosting sites like heroku doesn't allow to create folder out site src folder for that change VENV_PATH references to BASE_DIR
-STATIC_ROOT = os.path.join(VENV_PATH, 'static_root') ## STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
+ROOT_PATH = os.path.dirname(VENV_PATH)
+FRONTEND_PATH = os.path.join(ROOT_PATH, 'frontend')
+# STATIC_ROOT = os.path.join(VENV_PATH, 'static_root') ## STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
 
 # For Whitenoise
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'  ## Uncomment it to use whitenoise in the production environment.
@@ -103,6 +106,24 @@ MEDIA_ROOT = os.path.join(VENV_PATH, 'media')  ## MEDIA_ROOT is the folder where
 from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
+}
+
+# settings for django-webpack-loader
+DEBUG = True
+STATIC_ROOT = os.path.join(FRONTEND_PATH, 'public')
+STATICFILES_DIRS = (
+    os.path.join(FRONTEND_PATH, 'dist'),
+)
+
+WEBPACK_LOADER = {
+    'DEFAULT': {
+        'CACHE': not DEBUG,
+        'BUNDLE_DIR_NAME': '',
+        'STATS_FILE': os.path.join(FRONTEND_PATH, 'webpack-stats.json'),
+        'POLL_INTERVAL': 0.1,
+        'TIMEOUT': None,
+        'IGNORE': ['.+\\.hot-update.js', '.+\\.map']
+    }
 }
 
 # Email config
