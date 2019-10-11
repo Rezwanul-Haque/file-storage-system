@@ -129,6 +129,7 @@ static_in_env
 static_root
 venv
 /media
+backend/src/media/*
 .env
 
 # Frontend
