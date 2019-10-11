@@ -18,8 +18,7 @@ CUSTOM_MANAGEMENT_APPS = [
 ]
 
 LOCAL_APPS = [
-    'pages.apps.PagesConfig',
-    'accounts.apps.AccountsConfig',
+    # Add local app here example.apps.ExampleConfig
 ]
 
 INSTALLED_APPS = [

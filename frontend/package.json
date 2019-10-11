@@ -1,6 +1,6 @@
 {
-  "name": "file-storage-system",
-  "description": "A Vue.js project",
+  "name": "file-management-system",
+  "description": "A django backend and Vue.js frontend based file management system project",
   "version": "1.0.0",
   "author": "Rezwanul-Haque <rezwanul.cse@gmail.com>",
   "license": "MIT",

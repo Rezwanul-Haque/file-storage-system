@@ -7,7 +7,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name=settings.FRONTEND_PATH + '/index.html'), name='Home'),
-    # path('accounts/', include('accounts.urls')),
     path('admin/', admin.site.urls),
 ]
 
