@@ -102,7 +102,7 @@ STATIC_URL = '/static/'
 
 # Media Folder Settings
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(VENV_PATH, 'media')  ## MEDIA_ROOT is the folder where files uploaded using FileField will go.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  ## MEDIA_ROOT is the folder where files uploaded using FileField will go.
 
 # Messages (Toaster message config)
 from django.contrib.messages import constants as messages
