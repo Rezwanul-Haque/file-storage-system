@@ -11,6 +11,7 @@ SECRET_KEY = config('SECRET_KEY')
 THIRD_PARTY_APPS = [
     'django_extensions',
     'webpack_loader',
+    'rest_framework',
 ]
 
 CUSTOM_MANAGEMENT_APPS = [
@@ -18,7 +19,8 @@ CUSTOM_MANAGEMENT_APPS = [
 ]
 
 LOCAL_APPS = [
-    # Add local app here example.apps.ExampleConfig
+    # Add local app here 'example.apps.ExampleConfig'
+    'filemanager.apps.FilemanagerConfig',
 ]
 
 INSTALLED_APPS = [
