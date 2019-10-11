@@ -4,10 +4,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
 
+from .routers import router
+
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name=settings.FRONTEND_PATH + '/index.html'), name='Home'),
     path('admin/', admin.site.urls),
+    path('api/v1/', include(router.urls)),
 ]
 
 if settings.DEBUG:
