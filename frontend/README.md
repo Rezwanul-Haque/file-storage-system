@@ -1,6 +1,6 @@
-# file-storage-system
+# file-management-system
 
-> A Vue.js project
+> A Vue.js frontend and django backend based project
 
 ## Build Setup
 
